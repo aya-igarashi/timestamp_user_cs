@@ -5,6 +5,9 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 // our default array of dreams
 const dreams = [
@@ -37,4 +40,10 @@ const listener = app.listen(process.env.PORT, () => {
 app.get('/get1', function(request, response) {
   response.send('<h1>' + request.query.param1 + '</h1>');
 });
+
+app.post('/post1', function(request, response) {
+  response.send('受け取った値は：' + request.body.param1);
+});
+
+
 
