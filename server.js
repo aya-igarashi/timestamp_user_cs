@@ -32,3 +32,9 @@ app.get("/dreams", (request, response) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+// GET リクエストを /get1 で受け取ったときの処理
+app.get('/get1', function(request, response) {
+  response.send('<h1>' + request.query.param1 + '</h1>');
+});
+
