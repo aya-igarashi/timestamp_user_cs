@@ -8,6 +8,10 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
+const MongoClient = require('mongodb').MongoClient;
+const mongouri = 'mongodb+srv://'+process.env.USER+':'+process.env.PASS+'@'+process.env.MONGOHOST;
+
+
 
 // our default array of dreams
 const dreams = [
@@ -44,6 +48,4 @@ app.get('/get1', function(request, response) {
 app.post('/post1', function(request, response) {
   response.send('受け取った値は：' + request.body.param1);
 });
-
-
 
