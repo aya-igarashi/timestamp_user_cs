@@ -9,7 +9,10 @@
   
   <body>
     <input type="button" value="find" onclick="findUsers()"/>
+    <input type="button" value="save" onclick="saveUser()"/>
     <p id="result"></p><!-- ここにスクリプトを記述する -->
+    
+
     <script>
       const result = document.getElementById('result'); // 操作する p 要素
         function findUsers() {
@@ -18,12 +21,29 @@
         req.onreadystatechange = function(){
          if(req.readyState == 4 && req.status == 200) {
           const users = JSON.parse(req.response);
-          result.innerText = users[0].name; // 最初のユーザの名前
+          ninnzu = users.length
+          for 
+           result.innerText += users[0].name; // 最初のユーザの名前
+          
             }
           };
         req.open('GET', url, true);
         req.send();
        }
+      function saveUser() {
+       const url = '/save'; // 通信先
+       const req = new XMLHttpRequest(); // 通信用オブジェクト
+       req.onreadystatechange = function(){
+       if(req.readyState == 4 && req.status == 200) {
+        alert('成功'); // 成功したらアラート表示
+       }
+      };
+      const user = {name: '冨田', age: 29}; // 保存対象（適宜変更する）
+      req.open('POST', url, true);
+      req.setRequestHeader('Content-Type', 'application/json');
+      req.send(JSON.stringify(user)); // オブジェクトを文字列化して送信
+     }
+
 
      </script>
 
