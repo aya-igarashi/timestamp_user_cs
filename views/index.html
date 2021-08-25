@@ -8,6 +8,25 @@
   </head>
   
   <body>
+    <input type="button" value="find" onclick="findUsers()"/>
+    <p id="result"></p><!-- ここにスクリプトを記述する -->
+    <script>
+      const result = document.getElementById('result'); // 操作する p 要素
+        function findUsers() {
+        const url = '/find'; // 通信先
+        const req = new XMLHttpRequest(); // 通信用オブジェクト
+        req.onreadystatechange = function(){
+         if(req.readyState == 4 && req.status == 200) {
+          const users = JSON.parse(req.response);
+          result.innerText = users[0].name; // 最初のユーザの名前
+            }
+          };
+        req.open('GET', url, true);
+        req.send();
+       }
+
+     </script>
+
     <form method="get" action="/get1">
  　　 <input type="text" name="param1"/>
 　　  <input type="submit"/>
@@ -18,16 +37,4 @@
 　　</form>
 　</body>
 
-
-    <h1 id="result">ここに出力</h1> 
-    <script>
-     const hResult = document.getElementById('result');
-     const text01  = hResult.innerText;
-     alert(text01); // アラート表示
-     console.log(text01); // 標準出力
-     hResult.style.fontSize = '50px'; // フォントサイズ変更
-     hResult.style.color = 'orange'; // 色の変更
-     hResult.style.display = 'none'; // 非表示にする
-    </script>
-  </body>
 </html>
