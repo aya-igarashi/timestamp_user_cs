@@ -21,11 +21,11 @@
         req.onreadystatechange = function(){
          if(req.readyState == 4 && req.status == 200) {
           const users = JSON.parse(req.response);
-          ninnzu = users.length
-          for 
-           result.innerText += users[0].name; // 最初のユーザの名前
-          
-            }
+          const ninnzu = users.length;
+          for (let i = 0; i < ninnzu; i++){
+           result.innerHTML += "<br>" + users[i].name; // 最初のユーザの名前
+          }
+         }
           };
         req.open('GET', url, true);
         req.send();
