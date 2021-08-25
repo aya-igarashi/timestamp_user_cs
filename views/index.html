@@ -10,7 +10,8 @@
   <body>
     <input type="button" value="find" onclick="findUsers()"/>
     <input type="button" value="save" onclick="saveUser()"/>
-    <p id="result"></p><!-- ここにスクリプトを記述する -->
+    <div id="result"></div><!-- この div に要素を追加してゆく -->
+
     
 
     <script>
@@ -20,16 +21,19 @@
         const req = new XMLHttpRequest(); // 通信用オブジェクト
         req.onreadystatechange = function(){
          if(req.readyState == 4 && req.status == 200) {
-          const users = JSON.parse(req.response);
-          const ninnzu = users.length;
-          for (let i = 0; i < ninnzu; i++){
-           result.innerHTML += "<br>" + users[i].name; // 最初のユーザの名前
+          const users = JSON.parse(req.response);          
+          for(let i in users) {
+          const pName = document.createElement('p'); // p 要素
+          pName.innerText = users[i].name; // name の値を設定
+          result.appendChild(pName); // 情報表示部に追加
           }
+           }
          }
           };
+        while(result.firstChild) result.removeChild(result.firstChild);
         req.open('GET', url, true);
         req.send();
-       }
+       
       function saveUser() {
        const url = '/save'; // 通信先
        const req = new XMLHttpRequest(); // 通信用オブジェクト
