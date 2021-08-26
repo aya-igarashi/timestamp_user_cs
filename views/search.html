@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
     <title>EATag</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="/log-in.js" defer></script>
+    <script src="/search.js" defer></script>
   </head>
   
   <body>
@@ -16,12 +16,29 @@
     </div>
   
     <div>
-      <label for="exampleFormControlSelect1">検索結果</label>
-    </div>
-    <div>
       <button id="toform" class="btn btn-primary" type="submit">入力ページ</button>
     </div>
+    <div>
+      <label for="exampleFormControlsearch">検索結果</label>
+    </div><div class="form-group">
+    <label for="exampleFormControlSelect1">条件</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1　主食</option>
+      <option>2　おかず</option>
+      <option>3　汁物</option>
+      <option>4　おつまみ</option>
+      <option>5　デザート</option>
+      <option>6 レビュー高い順</option>
+    </select>
+  </div>
+  <div>
+      <button id="search" class="btn btn-primary" type="submit">検索</button>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">検索結果</label>
     
+       
   </body>
 </html>
 

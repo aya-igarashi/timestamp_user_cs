@@ -102,3 +102,8 @@ app.post('/save', function(req, res) {
 app.get("/log-in", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
+
+// https://expressjs.com/en/starter/basic-routing.html
+app.get("/toform", (request, response) => {
+  response.sendFile(__dirname + "/views/index.html");
+});
