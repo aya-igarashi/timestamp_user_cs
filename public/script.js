@@ -40,12 +40,6 @@ fetch("/dreams")
     });
   });
 
-document.getElementById("login").onclick = function(){
-  // ログイン処理
-  
-  // 成功した場合はページ遷移
-  location.href = "/index";
-}
 
 var elem = document.getElementById('formControlRange');
 var target = document.getElementById('value');
