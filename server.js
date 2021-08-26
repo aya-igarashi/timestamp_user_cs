@@ -117,14 +117,3 @@ app.get("/toform", (request, response) => {
 app.get("/index", (request, response) => {
   response.sendFile(__dirname + "/views/search.html");
 });
-
-app.get('/', (req, res) => {
-  connection.query(
-    'SELECT * FROM items',
-    (error, results) => {
-      res.render('index.ejs',{items:results});
-    }
-  );
-});
-
-app.listen(3000);

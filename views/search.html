@@ -37,8 +37,18 @@
   
   <div class="form-group">
     <label for="exampleFormControlSelect1">検索結果</label>
-    
-       
+
+      <ul>
+        <% items.forEach((item) => { %>
+          <li>
+            <div>
+              <span><%= item.id %></span>
+              <span><%= item.name %></span>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+      
   </body>
 </html>
 
