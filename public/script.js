@@ -47,14 +47,6 @@ document.getElementById("login").onclick = function(){
   location.href = "/index";
 }
 
-document.getElementById("movetologin").onclick = function(){
-  // ログイン処理
-  
-  // 成功した場合はページ遷移
-  location.href = "/log-in";
-}
-
-
 var elem = document.getElementById('formControlRange');
 var target = document.getElementById('value');
 var rangeValue = function (elem, target) {
