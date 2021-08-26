@@ -45,8 +45,11 @@
         req.onreadystatechange = function(){
          if(req.readyState == 4 && req.status == 200) {
           const users = JSON.parse(req.response);   
-    
-          <% forEach((user in users)=> { %>
+          for(let i in users) {
+          console.log(users[i].name, users[i].age);
+          }
+   
+          forEach((user in users)=> { 
             <li>
             <div>
               <span><%= user.name %></span>
@@ -69,16 +72,4 @@
   </body>
 </html>
  
-              
-<ul>
-        <% items.forEach((item) => { %>
-          <li>
-            <div>
-              <span><%= item.id %></span>
-              <span><%= item.name %></span>
-            </div>
-          </li>
-        <% }) %>
-      </ul>
-    </div> 
-    
+
