@@ -42,7 +42,7 @@
     <label for="exampleFormControlInput1">料理名</label>
     <input type="dish" class="form-control" id="exampleFormControlInput1" placeholder="例）アクアパッツア">
   </div>
-  </div>  
+   
   
   <div class="form-group">
     <label for="exampleFormControlInput2">HPリンク</label>
@@ -68,34 +68,10 @@
   </div>
   
 
-  <div id="result_listings">           
-    <script>                var inHTML= '<table style="border: 1px solid black">';
-                var results= <%-JSON.parse(listings) %>;
-                inHTML += '<tr style="border: 1px solid black">';
-                inHTML += "<th>file</th>";
-                inHTML += "<th>count</th>";
-                inHTML += "</tr>";
-                results.forEach(function(item, index){
-                    inHTML += '<tr style="border: 1px solid black>';
-                    inHTML += "<td>" + index + "</td>";
-                    inHTML += "<td>" + item.file + "</td>";
-                    inHTML += "<td>" + item.occurances + "</td>";
-                    inHTML += "</tr>";
-                })
-                inHTML += "<table>";
-                document.getElementById("result_listings").innerHTML= inHTML;
-            </script>    
-  </div>
-
- 
-  
-
-  
-
 
   
     <script>
-     
+      console.log("users");
        
       function saveUser() {
        const url = '/save'; // 通信先
@@ -114,5 +90,5 @@
 
      </script>
 
-
+　　</body>
 </html>
