@@ -67,7 +67,26 @@
       <button id="save" class="btn btn-primary" type="submit">保存</button>
   </div>
   
-  
+
+  <div id="result_listings">           
+    <script>                var inHTML= '<table style="border: 1px solid black">';
+                var results= <%-JSON.stringify(listings) %>;
+                inHTML += '<tr style="border: 1px solid black">';
+                inHTML += "<th>file</th>";
+                inHTML += "<th>count</th>";
+                inHTML += "</tr>";
+                results.forEach(function(item, index){
+                    inHTML += '<tr style="border: 1px solid black>';
+                    inHTML += "<td>" + index + "</td>";
+                    inHTML += "<td>" + item.file + "</td>";
+                    inHTML += "<td>" + item.occurances + "</td>";
+                    inHTML += "</tr>";
+                })
+                inHTML += "<table>";
+                document.getElementById("result_listings").innerHTML= inHTML;
+            </script>    
+  </div>
+
  
   
 
