@@ -39,3 +39,14 @@ fetch("/dreams")
       dreamsForm.elements.dream.focus();
     });
   });
+
+
+var elem = document.getElementById('formControlRange');
+var target = document.getElementById('value');
+var rangeValue = function (elem, target) {
+  return function(evt){
+    target.innerHTML = elem.value;
+  }
+}
+elem.addEventListener('input', rangeValue(elem, target));
+
