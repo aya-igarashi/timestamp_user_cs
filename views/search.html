@@ -36,7 +36,8 @@
   </div>
   
   <div class="form-group">
-    <label for="exampleFormControlSelect1">検索結果</label>
+   <label for="exampleFormControlSelect1">検索結果</label>
+  <script>
   const result = document.getElementById('result'); // 操作する p 要素
         function findUsers() {
         const url = '/find'; // 通信先
@@ -45,7 +46,7 @@
          if(req.readyState == 4 && req.status == 200) {
           const users = JSON.parse(req.response);   
     
-          for(let i in users) {
+          <% forEach((user in users)=> { %>
             <li>
             <div>
               <span><%= users.name %></span>
@@ -62,6 +63,7 @@
         req.open('GET', url, true);
         req.send();
         }
+    </script>
       
   </body>
 </html>
