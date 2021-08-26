@@ -34,6 +34,11 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/log-in.html");
 });
 
+// https://expressjs.com/en/starter/basic-routing.html
+app.get("/", (request, response) => {
+  response.sendFile(__dirname + "/views/search.html");
+});
+
 // send the default array of dreams to the webpage
 app.get("/dreams", (request, response) => {
   // express helps us take JS objects and send them as JSON
@@ -99,11 +104,16 @@ app.post('/save', function(req, res) {
 
 
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/log-in", (request, response) => {
+app.get("/input", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/toform", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
+});
+
+// https://expressjs.com/en/starter/basic-routing.html
+app.get("/toseach", (request, response) => {
+  response.sendFile(__dirname + "/views/search.html");
 });
