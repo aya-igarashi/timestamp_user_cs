@@ -1,5 +1,6 @@
 dependencies:
   body-parser: 1.19.0
+  bootstrap: 5.1.0
   express: 4.17.1
   mongodb: 4.1.0
 packages:
@@ -52,6 +53,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
+  /bootstrap/5.1.0:
+    dev: false
+    peerDependencies:
+      '@popperjs/core': ^2.9.3
+    resolution:
+      integrity: sha512-bs74WNI9BgBo3cEovmdMHikSKoXnDgA6VQjJ7TyTotU6L7d41ZyCEEelPwkYEzsG/Zjv3ie9IE3EMAje0W9Xew==
   /bson/4.5.0:
     dependencies:
       buffer: 5.7.1
@@ -514,5 +521,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.19.0
+  bootstrap: ^5.1.0
   express: ^4.17.1
   mongodb: ^4.1.0
