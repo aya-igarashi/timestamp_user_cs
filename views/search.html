@@ -16,11 +16,10 @@
     </div>
   
     <div>
-      <button id="toform" class="btn btn-primary" type="submit">入力ページ</button>
+      <button id="toform" class="btn btn-primary" type="submit">入力ページへ</button>
     </div>
-    <div>
-      <label for="exampleFormControlsearch">検索結果</label>
-    </div><div class="form-group">
+  
+    <div class="form-group">
     <label for="exampleFormControlSelect1">条件</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>1　主食</option>
@@ -39,21 +38,21 @@
    <label for="exampleFormControlSelect1">検索結果</label>
   <script>
   const result = document.getElementById('result'); // 操作する p 要素
-        function findUsers() {
+        function findDishes() {
         const url = '/find'; // 通信先
         const req = new XMLHttpRequest(); // 通信用オブジェクト
         req.onreadystatechange = function(){
          if(req.readyState == 4 && req.status == 200) {
           const users = JSON.parse(req.response);   
-          for(let i in users) {
-          console.log(users[i].name, users[i].age);
+          for(let i in dishes) {
+          console.log(dishes[i].name, dishes[i].age);
           }
    
-          forEach((user in users)=> { 
+          forEach((dish in dishes)=> { 
             <li>
             <div>
-              <span>resulat.innerText=user.name</span>
-              <span>result.innerText=innerText=user.age</span>
+              <span>resulat.innerText=dish.junle</span>
+              <span>result.innerText=dish.name</span>
             </div>
            </li>  
           //const pName = document.createElement('p'); // p 要素

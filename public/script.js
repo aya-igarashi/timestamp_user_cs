@@ -56,3 +56,9 @@ var rangeValue = function (elem, target) {
 }
 elem.addEventListener('input', rangeValue(elem, target));
 
+document.getElementById("save").onclick = function(){
+  // ログイン処理
+  
+  // 成功した場合はページ遷移
+  location.href = "/save";
+};

@@ -62,10 +62,10 @@ app.post('/post1', function(request, response) {
 app.get('/find', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
-    const colUser = db.collection('users'); // 対象コレクション
+    const colDishes = db.collection('dishes'); // 対象コレクション
     const condition = {}; // 検索条件（全件取得）
-    colUser.find(condition).toArray(function(err, users) {
-      res.json(users); // JSON 形式で画面に返す
+    colDishes.find(condition).toArray(function(err, dishes) {
+      res.json(dishes); // JSON 形式で画面に返す
       client.close(); // DB を閉じる
     });
   });
@@ -75,7 +75,7 @@ app.get('/save', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colDishes = db.collection('dishes'); // 対象コレクション
-    const dish = {dish: 'オニオングラタン', HPlink:'xxx',memo:'おいしい', rating:3.2}; // 保存対象
+    const dish = {junle:'汁物', name: 'オニオングラタンスープ', HPlink:'xxx',memo:'おいしい', rating:3.2}; // 保存対象
     colDishes.insertOne(dish, function(err, result) {
       res.sendStatus(200); // HTTP ステータスコード返却
       client.close(); // DB を閉じる
