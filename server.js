@@ -93,10 +93,10 @@ app.post('/save', function(req, res) {
 });
 
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/test", (request, response) => {
-  response.sendFile(__dirname + "/views/test.html");
+app.get("/movetologin", (request, response) => {
+  response.sendFile(__dirname + "/views/log-in");
 });
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/log-in", (request, response) => {
-  response.sendFile(__dirname + "/views/log-in.html");
+  response.sendFile(__dirname + "/views/index.html");
 });
