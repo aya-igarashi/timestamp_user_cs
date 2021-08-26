@@ -114,6 +114,6 @@ app.get("/toform", (request, response) => {
 });
 
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/toseach", (request, response) => {
+app.get("/index", (request, response) => {
   response.sendFile(__dirname + "/views/search.html");
 });
