@@ -70,7 +70,7 @@
 
   <div id="result_listings">           
     <script>                var inHTML= '<table style="border: 1px solid black">';
-                var results= <%-JSON.stringify(listings) %>;
+                var results= <%-JSON.parse(listings) %>;
                 inHTML += '<tr style="border: 1px solid black">';
                 inHTML += "<th>file</th>";
                 inHTML += "<th>count</th>";
@@ -95,24 +95,7 @@
 
   
     <script>
-      const result = document.getElementById('result'); // 操作する p 要素
-        function findUsers() {
-        const url = '/find'; // 通信先
-        const req = new XMLHttpRequest(); // 通信用オブジェクト
-        req.onreadystatechange = function(){
-         if(req.readyState == 4 && req.status == 200) {
-          const users = JSON.parse(req.response);          
-          for(let i in users) {
-          const pName = document.createElement('p'); // p 要素
-          pName.innerText = users[i].name; // name の値を設定
-          result.appendChild(pName); // 情報表示部に追加
-          }
-         }
-          };
-        while(result.firstChild) result.removeChild(result.firstChild);
-        req.open('GET', url, true);
-        req.send();
-        }
+     
        
       function saveUser() {
        const url = '/save'; // 通信先
