@@ -71,18 +71,19 @@
   
     <script>
       
-      function saveUser() {
+      function saveDishes() {
        const textBox1 = document.getElementById('junle'); // テキストボックス
        const junle = textBox1.value; // テキストボックスに書かれた内容
        const textBox2 = document.getElementById('name'); // テキストボックス
-       const name = textBox1.value; // テキストボックスに書かれた内容
+       const name = textBox2.value; // テキストボックスに書かれた内容
        const textBox3 = document.getElementById('link'); // テキストボックス
-       const link = textBox1.value; // テキストボックスに書かれた内容
+       const link = textBox3.value; // テキストボックスに書かれた内容
        const textBox4 = document.getElementById('memo'); // テキストボックス
-       const memo = textBox1.value; // テキストボックスに書かれた内容
+       const memo = textBox4.value; // テキストボックスに書かれた内容
+       const textBox5 = document.getElementById('rating'); // テキストボックス
+       const rating = textBox5.value; // テキストボックスに書かれた内容
         
-        
-       const user = {name:userName};
+       const dish = {junle:junle, name:name, link:link, memo:memo, rating:rating};
 
         
        const url = '/save'; // 通信先
@@ -92,10 +93,9 @@
         alert('成功'); // 成功したらアラート表示
        }
       };
-      const user = {name: '冨田', age: 29}; // 保存対象（適宜変更する）
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify(user)); // オブジェクトを文字列化して送信
+      req.send(JSON.stringify(dish)); // オブジェクトを文字列化して送信
      }
 
 
