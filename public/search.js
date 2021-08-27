@@ -26,7 +26,7 @@ document.getElementById("tosearch").onclick = function(){
             const td_memo = document.createElement('td');
             td_memo.innerHTML = results[i].memo;
             const td_rating = document.createElement('td');
-            td_memo.innerHTML = results[i].rating;
+            td_rating.innerHTML = results[i].rating;
             tr.appendChild(td_junle);
             tr.appendChild(td_name);
             tr.appendChild(td_HPlink);
