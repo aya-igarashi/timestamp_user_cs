@@ -22,10 +22,9 @@ document.getElementById("tosearch").onclick = function(){
             const td_name = document.createElement('td');
             td_name.innerHTML = results[i].name;    
             const td_HPlink = document.createElement('td');
-            td_HPlink.innerHTML = results[i].HPlink;
             const a_HPlink=document.createElement('a');
             a_HPlink.innerText=results[i].HPlink;
-            a_HPlink.href="http://google.jp";
+            a_HPlink.href=results[i].HPlink;
             td_HPlink.appendChild(a_HPlink);
             const td_memo = document.createElement('td');
             td_memo.innerHTML = results[i].memo;
