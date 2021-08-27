@@ -21,11 +21,17 @@ document.getElementById("tosearch").onclick = function(){
             td_junle.innerHTML = results[i].junle;
             const td_name = document.createElement('td');
             td_name.innerHTML = results[i].name;    
-            const td_hp = document.createElement('td');
-            td_hp.innerHTML = results[i].hp;
+            const td_HPlink = document.createElement('td');
+            td_HPlink.innerHTML = results[i].HPlink;
+            const td_memo = document.createElement('td');
+            td_memo.innerHTML = results[i].memo;
+            const td_rating = document.createElement('td');
+            td_memo.innerHTML = results[i].rating;
             tr.appendChild(td_junle);
             tr.appendChild(td_name);
-            tr.appendChild(td_hp);
+            tr.appendChild(td_HPlink);
+            tr.appendChild(td_memo);
+            tr.appendChild(td_rating);
             tbody.appendChild(tr);
           }
          }
