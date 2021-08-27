@@ -47,7 +47,7 @@ document.getElementById("tosearch").onclick = function(){
   location.href = "/index";
 };
 
-var elem = document.getElementById('formControlRange');
+var elem = document.getElementById('rating');
 var target = document.getElementById('value');
 var rangeValue = function (elem, target) {
   return function(evt){
