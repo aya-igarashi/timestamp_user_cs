@@ -81,7 +81,7 @@ app.post('/save', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colDishes = db.collection('dishes'); // 対象コレクション
-    const dish = {junle:, name: 'オニオングラタンスープ', HPlink:'xxx',memo:'おいしい', rating:3.2}; // 保存対象
+    const dish = {junle:'mm', name: 'オニオングラタンスープ', HPlink:'xxx',memo:'おいしい', rating:3.2}; // 保存対象
     colDishes.insertOne(dish, function(err, result) {
       res.sendStatus(200); // HTTP ステータスコード返却
       client.close(); // DB を閉じる
