@@ -17,13 +17,13 @@ document.getElementById("tosearch").onclick = function(){
            
           for(let i in results) {
             const tr = document.createElement('tr');
-            const td_id = document.createElement('td');
-            td_id.innerHTML = results[i].id;
+            const td_junle = document.createElement('td');
+            td_junle.innerHTML = results[i].junle;
             const td_name = document.createElement('td');
             td_name.innerHTML = results[i].name;    
             const td_hp = document.createElement('td');
             td_hp.innerHTML = results[i].hp;
-            tr.appendChild(td_id);
+            tr.appendChild(td_junle);
             tr.appendChild(td_name);
             tr.appendChild(td_hp);
             tbody.appendChild(tr);
