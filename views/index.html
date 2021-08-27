@@ -27,8 +27,8 @@
 <form>
   <div class="form row">
   <div class="form-group col">
-    <label for="exampleFormControlSelect1">ジャンル</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <label for="junle">ジャンル</label>
+    <select class="form-control" id="junle">
       <option>1　主食</option>
       <option>2　おかず</option>
       <option>3　汁物</option>
@@ -38,27 +38,27 @@
   </div>
   
   <div class="form-group col-8">
-    <label for="exampleFormControlInput1">料理名</label>
-    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="例）アクアパッツア">
+    <label for="name">料理名</label>
+    <input type="text" class="form-control" id="name" placeholder="例）アクアパッツア">
   </div>
    
   
   <div class="form-group">
-    <label for="exampleFormControlInput2">HPリンク</label>
-    <input type="HPlink" class="form-control" id="exampleFormControlInput2" placeholder="https://www.com/xxx-xxx">
+    <label for="link">HPリンク</label>
+    <input type="text" class="form-control" id="link" placeholder="https://www.com/xxx-xxx">
   </div>
   
   <div class="form-group">
-    <label for="exampleFormControlInput3">メモ</label>
-    <input type="memo" class="form-control" id="exampleFormControlInput3" placeholder="例）5分焼いたら焦げてしまった">
+    <label for="memo">メモ</label>
+    <input type="text" class="form-control" id="memo" placeholder="例）5分焼いたら焦げてしまった">
   </div>
   
 </form>
   
 <form>
   <div class="form-group">
-    <label for="formControlRange">レビュー</label>
-    <input type="range" class="form-control-range" id="formControlRange" min="0" max="5" step="0.1">
+    <label for="rating">レビュー</label>
+    <input type="range" class="form-control-range" id="rating" min="0" max="5" step="0.1">
     <span id="value">2.5</span>
   </div>
 </form>
@@ -70,10 +70,34 @@
 
   
     <script>
-      const textBox1 = document.getElementById('userName'); // テキストボックス
-      const userName = textBox1.value; // テキストボックスに書かれた内容
+      
+      function saveUser() {
+       const textBox1 = document.getElementById('junle'); // テキストボックス
+       const junle = textBox1.value; // テキストボックスに書かれた内容
+       const textBox2 = document.getElementById('name'); // テキストボックス
+       const name = textBox1.value; // テキストボックスに書かれた内容
+       const textBox3 = document.getElementById('link'); // テキストボックス
+       const link = textBox1.value; // テキストボックスに書かれた内容
+       const textBox4 = document.getElementById('memo'); // テキストボックス
+       const memo = textBox1.value; // テキストボックスに書かれた内容
+        
+        
+       const user = {name:userName};
 
-      const user = {name:userName};
+        
+       const url = '/save'; // 通信先
+       const req = new XMLHttpRequest(); // 通信用オブジェクト
+       req.onreadystatechange = function(){
+       if(req.readyState == 4 && req.status == 200) {
+        alert('成功'); // 成功したらアラート表示
+       }
+      };
+      const user = {name: '冨田', age: 29}; // 保存対象（適宜変更する）
+      req.open('POST', url, true);
+      req.setRequestHeader('Content-Type', 'application/json');
+      req.send(JSON.stringify(user)); // オブジェクトを文字列化して送信
+     }
+
 
      </script>
 
