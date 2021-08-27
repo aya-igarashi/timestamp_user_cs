@@ -70,22 +70,10 @@
 
   
     <script>
-      console.log("users");
-       
-      function saveUser() {
-       const url = '/save'; // 通信先
-       const req = new XMLHttpRequest(); // 通信用オブジェクト
-       req.onreadystatechange = function(){
-       if(req.readyState == 4 && req.status == 200) {
-        alert('成功'); // 成功したらアラート表示
-       }
-      };
-      const user = {name: '冨田', age: 29}; // 保存対象（適宜変更する）
-      req.open('POST', url, true);
-      req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify(user)); // オブジェクトを文字列化して送信
-     }
+      const textBox1 = document.getElementById('userName'); // テキストボックス
+      const userName = textBox1.value; // テキストボックスに書かれた内容
 
+      const user = {name:userName};
 
      </script>
 
