@@ -71,7 +71,7 @@ app.get('/find', function(req, res){
   });
 });
 
-app.get('/save', function(req, res){
+app.post('/save', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colDishes = db.collection('dishes'); // 対象コレクション
@@ -83,24 +83,24 @@ app.get('/save', function(req, res){
   });
 });
 
-app.post('/save', function(req, res) {
-  let received = '';
-  req.setEncoding('utf8');
-  req.on('data', function(chunk) {
-    received += chunk;
-  });
-  req.on('end', function() {
-    MongoClient.connect(mongouri, function(error, client) {
-      const db = client.db(process.env.DB); // 対象 DB
-      const colUser = db.collection('users'); // 対象コレクション
-      const user = JSON.parse(received); // 保存対象
-      colUser.insertOne(user, function(err, result) {
-        res.sendStatus(200); // HTTP ステータスコード返却
-        client.close(); // DB を閉じる
-      });
-    });
-  });
-});
+// app.post('/save', function(req, res) {
+//   let received = '';
+//   req.setEncoding('utf8');
+//   req.on('data', function(chunk) {
+//     received += chunk;
+//   });
+//   req.on('end', function() {
+//     MongoClient.connect(mongouri, function(error, client) {
+//       const db = client.db(process.env.DB); // 対象 DB
+//       const colUser = db.collection('users'); // 対象コレクション
+//       const user = JSON.parse(received); // 保存対象
+//       colUser.insertOne(user, function(err, result) {
+//         res.sendStatus(200); // HTTP ステータスコード返却
+//         client.close(); // DB を閉じる
+//       });
+//     });
+//   });
+// });
 
 
 // https://expressjs.com/en/starter/basic-routing.html
