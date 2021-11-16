@@ -1,5 +1,12 @@
 document.getElementById("login").onclick = function(){
-  // ログイン処理
+  location.href = "/input";
+};
+
+document.getElementById("newlogin").onclick = function(){
+  
+};
+
+// ログイン処理
   // Get the username and password from the UI.
   var username = document.getElementById("username-field").value;
   var password = document.getElementById("password-field").value;
@@ -21,8 +28,3 @@ document.getElementById("login").onclick = function(){
       console.log("Unable to register user: " + errorString);
     }
   });
-};
-
-document.getElementById("newlogin").onclick = function(){
-  
-};
