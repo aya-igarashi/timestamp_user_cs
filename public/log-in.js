@@ -13,7 +13,7 @@ document.getElementById("login").onclick = function(){
       console.log("User registered: " + JSON.stringify(theUser));
 
       // Go to the main screen.
-      openListPage();
+      location.href = "/input";
     },
     // If the user was not registered
     failure: function(theUser, errorString) {
@@ -21,10 +21,8 @@ document.getElementById("login").onclick = function(){
       console.log("Unable to register user: " + errorString);
     }
   });
+};
 
-
+document.getElementById("newlogin").onclick = function(){
   
-  
-  // 成功した場合はページ遷移
-  location.href = "/input";
 };
