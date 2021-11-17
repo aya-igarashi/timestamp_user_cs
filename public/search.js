@@ -12,6 +12,9 @@ document.getElementById("tosearch").onclick = function(){
         const url = '/find'; // 通信先
         const req = new XMLHttpRequest(); // 通信用オブジェクト
         req.onreadystatechange = function(){
+        //req.open('POST', url, true);
+        //req.setRequestHeader('Content-Type', 'application/json');
+        req.send(JSON.stringify(search_junle)); // オブジェクトを文字列化して送信
          if(req.readyState == 4 && req.status == 200) {
           const results = JSON.parse(req.response);   
            
@@ -46,4 +49,3 @@ document.getElementById("tosearch").onclick = function(){
   
   // 成功した場合はページ遷移
 };
-
