@@ -6,7 +6,7 @@ document.getElementById("toform").onclick = function(){
 };
 
 document.getElementById("tosearch").onclick = function(){
-          const document.getElementById("exampleFormControlSelect1")
+          const search_junle = document.getElementById("exampleFormControlSelect1")
           const tbody = document.getElementById('tbody'); 
 
         const url = '/find'; // 通信先
