@@ -20,6 +20,23 @@ const dreams = [
   "Wash the dishes"
 ];
 
+//login機能
+const path = require('path');
+const passport = require('passport');
+const { Strategy } = require('passport-local'); 
+const mongoose = require('mongoose');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+const server = express();
+const port = process.env.PORT || 8080;
+
+server.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname + '/log-in2.html/');
+});
+
+server.listen(port);
+
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
