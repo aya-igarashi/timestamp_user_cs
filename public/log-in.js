@@ -28,3 +28,4 @@ document.getElementById("newlogin").onclick = function(){
       console.log("Unable to register user: " + errorString);
     }
   });
+
