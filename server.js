@@ -64,9 +64,9 @@ app.get('/find', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colDishes = db.collection('dishes'); // 対象コレクション
-    const condition = {
-      
-    }; // 検索条件（全件取得）
+    const condition = {}; // 検索条件（全件取得）
+    
+    if serch_junle = 
     colDishes.find(condition).toArray(function(err, dishes) {
       res.json(dishes); // JSON 形式で画面に返す
       client.close(); // DB を閉じる
