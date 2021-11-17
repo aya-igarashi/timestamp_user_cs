@@ -6,7 +6,7 @@ document.getElementById("toform").onclick = function(){
 };
 
 document.getElementById("tosearch").onclick = function(){
-  // ログイン処理
+
           const tbody = document.getElementById('tbody'); 
 
         const url = '/find'; // 通信先
