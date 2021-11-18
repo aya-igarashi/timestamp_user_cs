@@ -72,8 +72,9 @@ app.get('/find', function(req, res){
     const colDishes = db.collection('dishes'); // 対象コレクション
     const condition = {}; // 検索条件（全件取得）
     
-    if search_junle = "主食"
-      condition = 
+    if (search_junle = "主食"){
+      condition =  {"junle":"主食"};
+      }    
     colDishes.find(condition).toArray(function(err, dishes) {
       res.json(dishes); // JSON 形式で画面に返す
       client.close(); // DB を閉じる
