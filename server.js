@@ -64,9 +64,10 @@ app.get('/find', function(req, res){
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colDishes = db.collection('dishes'); // 対象コレクション
+    const search_junle = JSON.parse(received); // 対象検索ジャンル
     const condition = {}; // 検索条件（全件取得）
     
-    if 'search_junle' = 
+    if search_junle = 
       condition = 
     colDishes.find(condition).toArray(function(err, dishes) {
       res.json(dishes); // JSON 形式で画面に返す
