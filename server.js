@@ -74,22 +74,18 @@ app.post('/find', function(req, res){
     received += chunk;
   });
   req.on('end', function() {
-    console.log('received = ' + received);
+    const search_junle = JSON.parse(received).search_junle;
+    MongoClient.connect(mongouri, function(error, client) {
+      const db = client.db(process.env.DB); // 対象 DB
+      const colDishes = db.collection('dishes'); // 対象コレクション
+      const condition = {junle: search_junle}; // 検索条件
+      
+      colDishes.find(condition).toArray(function(err, dishes) {
+        res.json(dishes);
+        client.close();
+      });
+    });
   });
-//   const search_junle = JSON.parse(received); // 対象検索ジャンル
-//   MongoClient.connect(mongouri, function(error, client) {
-//     const db = client.db(process.env.DB); // 対象 DB
-//     const colDishes = db.collection('dishes'); // 対象コレクション
-//     const condition = {}; // 検索条件（全件取得）
-    
-//     if (search_junle = "主食"){
-//       condition =  {"junle":"主食"};
-//       }    
-//     colDishes.find(condition).toArray(function(err, dishes) {
-//       res.json(dishes); // JSON 形式で画面に返す
-//       client.close(); // DB を閉じる
-//     });
-//   });
 });
 
 app.post('/save', function(req, res){
