@@ -68,12 +68,12 @@ app.post('/post1', function(request, response) {
 });
 
 app.get('/find', function(req, res){
-  console.log('find');
   let received = '';
   req.setEncoding('utf8');
   req.on('data', function(chunk) {
     received += chunk;
   });
+  console.log(received);
   const search_junle = JSON.parse(received); // 対象検索ジャンル
   MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
