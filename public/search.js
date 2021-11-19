@@ -43,5 +43,5 @@ document.getElementById("tosearch").onclick = function(){
   }
   req.open('GET', url, true);
   req.setRequestHeader('Content-Type', 'application/json');
-  req.send(JSON.stringify({search_junle: search_junle}));
+  req.send(JSON.stringify({user: 'user'}));
 };
