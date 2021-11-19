@@ -59,7 +59,7 @@ app.post('/find', function(req, res){
       
       // Iさんのコードでは、 search_junle が主食であれば condition に"主食"を入れる、
       // というような記述がありましたが、セレクトボックスの値をうまくとれていれば、
-      // それをそのまま condition にセットするだけで上手く検索できます。
+      // それをそのまま condition にセットするだけで検索できます。
       const condition = {junle: search_junle}; // 検索条件
       
       colDishes.find(condition).toArray(function(err, dishes) {
