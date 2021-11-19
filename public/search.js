@@ -18,7 +18,7 @@ document.getElementById("tosearch").onclick = function(){
 
   
   // XMLHttpRequestの使い方が間違っていました。
-  // このコードでは少し分かりやすいように講義で言ってたものから処理の順番を入れ替えていますが、
+  // このコードでは少し分かりやすいようにインターンの講義のときに言ってたものから処理の順番を入れ替えていますが、
   // ↓でサーバ側へリクエストを送っていて、
   // req.open('POST', url, true);
   // req.setRequestHeader('Content-Type', 'application/json');
