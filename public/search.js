@@ -11,12 +11,28 @@ document.getElementById("tosearch").onclick = function(){
   const search_junle = document.getElementById("exampleFormControlSelect1").value;
   const tbody = document.getElementById('tbody'); 
   
-  // Iさんのコードだとテーブル要素を作った後にこの処理を書いていましたが、
-  // これはテーブルの要素を全て削除 (いわゆる初期化)
+  // Iさん (個人名は隠しておきます) のコードだとテーブル要素を作った後にこの処理を書いていましたが、
+  // これはテーブルの要素を全て削除 (いわゆる初期化) する処理なので、最後に書いちゃうと
+  // サーバからデータを取得してテーブルを作る → 最後に全て削除、ということになってしまいます。
   while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
 
+  
+  // XMLHttpRequestの使い方が間違っています。
+  // このコードでは少し分かりやすいように講義で言ってたものから処理の順番を入れ替えていますが、
+  // ↓でサーバ側へリクエストを送っていて、
+  // req.open('POST', url, true);
+  // req.setRequestHeader('Content-Type', 'application/json');
+  // req.send(JSON.stringify({search_junle: search_junle}));
+  
+  // req.onreadystatechange = function(){
+  //   if(req.readyState == 4 && req.status == 200) {
+  //   ...
+  // 
   const url = '/find'; // 通信先
   const req = new XMLHttpRequest(); // 通信用オブジェクト
+  req.open('POST', url, true);
+  req.setRequestHeader('Content-Type', 'application/json');
+  req.send(JSON.stringify({search_junle: search_junle}));
   req.onreadystatechange = function(){
     if(req.readyState == 4 && req.status == 200) {
       console.log(req.response);
@@ -46,7 +62,5 @@ document.getElementById("tosearch").onclick = function(){
       }
     }
   }
-  req.open('POST', url, true);
-  req.setRequestHeader('Content-Type', 'application/json');
-  req.send(JSON.stringify({search_junle: search_junle}));
+  
 };
