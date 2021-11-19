@@ -6,7 +6,8 @@ document.getElementById("toform").onclick = function(){
 };
 
 document.getElementById("tosearch").onclick = function(){
-  const search_junle = document.getElementById("exampleFormControlSelect1")
+  const search_junle = document.getElementById("exampleFormControlSelect1");
+  console.log(search_junle.selected);
   const tbody = document.getElementById('tbody'); 
 
   const url = '/find'; // 通信先
@@ -41,7 +42,7 @@ document.getElementById("tosearch").onclick = function(){
       //while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
     }
   }
-  req.open('GET', url, true);
+  req.open('POST', url, true);
   req.setRequestHeader('Content-Type', 'application/json');
-  req.send(JSON.stringify({user: 'user'}));
+  req.send(JSON.stringify({search_junle: search_junle}));
 };

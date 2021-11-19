@@ -67,11 +67,10 @@ app.post('/post1', function(request, response) {
   response.send('受け取った値は：' + request.body.param1);
 });
 
-app.get('/find', function(req, res){
+app.post('/find', function(req, res){
   let received = '';
   req.setEncoding('utf8');
   req.on('data', function(chunk) {
-    console.log('chunk = ' + chunk);
     received += chunk;
   });
   req.on('end', function() {
