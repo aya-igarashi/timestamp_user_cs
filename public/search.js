@@ -11,7 +11,7 @@ document.getElementById("tosearch").onclick = function(){
   const search_junle = document.getElementById("exampleFormControlSelect1").value;
   const tbody = document.getElementById('tbody'); 
   
-  // Iさん (個人名は隠しておきます) のコードだとテーブル要素を作った後にこの処理を書いていましたが、
+  // Iさんのコードだとテーブル要素を作った後にこの処理を書いていましたが、
   // これはテーブルの要素を全て削除 (いわゆる初期化) する処理なので、最後に書いちゃうと
   // サーバからデータを取得してテーブルを作る → 最後に全て削除、ということになってしまいます。
   while(tbody.firstChild) tbody.removeChild(tbody.firstChild);

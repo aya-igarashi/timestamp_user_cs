@@ -57,7 +57,7 @@ app.post('/find', function(req, res){
       const db = client.db(process.env.DB); // 対象 DB
       const colDishes = db.collection('dishes'); // 対象コレクション
       
-      // Iさん (個人名は隠しておきます) のコードでは search_junle が主食であれば、condition に"主食"を入れる、
+      // Iさんのコードでは、 search_junle が主食であれば condition に"主食"を入れる、
       // というような記述がありましたが、セレクトボックスの値をうまくとれていれば、
       // それをそのまま condition にセットするだけで上手く検索できます。
       const condition = {junle: search_junle}; // 検索条件

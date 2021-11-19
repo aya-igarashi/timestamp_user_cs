@@ -16,10 +16,15 @@
     </div>
   
     
-  <!-- Iさん -->
+  <!-- Iさんのコードでは、form に method, action 属性が足りませんでした。 -->
+  <!-- form の基本として、method と action は必須です。 -->
+  <!-- これらの値を見て、「このフォームのデータをどこに飛ばすか」を決定付けます。 -->
+  <!-- 例えば↓のような場合だと、/login に対して POST メソッドでデータを飛ばします。 -->
+  <!-- サーバ側でいうと、app.post('/login', function() {...}) が実行されることになります。 -->
    <form method="post" action="/login">
   <div class="form-group">
     <label for="InputUserName1">User Name</label>
+    <!-- input では、name 属性が必要です。server.js の方を見てもらえれば良いですが、name の値をキーとして、input に入ったデータを取得します。 -->
     <input type="name" class="form-control" id="InputUserName" aria-describedby="nameHelp" placeholder="Enter user name" name="userName">
     <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
