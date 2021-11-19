@@ -91,6 +91,17 @@ app.post('/save', function(req, res){
 
 // ログイン処理
 app.post('/login', function(req, res) {
+  // ユーザデータを入れたいので、一時的にデータ挿入用コードを追加
+  // 一度だけ実行した後はコメントアウトで無効化する
+  MongoClient.connect(mongouri, function(error, client) {
+    const db = client.db(process.env.DB); // 対象 DB
+    const colUser = db.collection('sample_accounts'); // 対象コレクション
+    const user = {name: 'igarashi', password:'igarashi'}; // 保存対象
+    colUser.insertOne(user, function(err, result) {
+      client.close(); // DB を閉じる
+    });
+  });
+  
   const userName = req.body.userName;
   const password = req.body.password;
   MongoClient.connect(mongouri, function(error, client) {
