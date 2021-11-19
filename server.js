@@ -121,7 +121,22 @@ app.post('/save', function(req, res){
 // });
 
 app.post('/login', function(req, res) {
-  resp
+  res.send(req.body);
+  const userName = req.body.userName;
+  const password = req.body.password;
+  MongoClient.connect(mongouri, function(error, client) {
+    const db = client.db(process.env.DB); // 対象 DB
+    const col = db.collection('sample_accounts'); // 対象コレクション
+    // ★★★パスワードは平文（入力されたそのままの文字列）で保存すべきではない
+    // ログインの際も入力されたパスワードをハッシュ化した上で
+    // 保存されているハッシュ化済みのパスワードと比較する
+    const user = {name: userName, password:password}; // 保存対象
+    // 参考：https://qiita.com/kou_pg_0131/items/174aefd8f894fea4d11a
+    col.insertOne(user, function(err, result) {
+      res.redirect('/'); // リダイレクト
+      client.close(); // DB を閉じる
+    });
+  });
 });
 
 
