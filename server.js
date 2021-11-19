@@ -68,6 +68,7 @@ app.post('/post1', function(request, response) {
 });
 
 app.get('/find', function(req, res){
+  console.log('find');
   let received = '';
   req.setEncoding('utf8');
   req.on('data', function(chunk) {
