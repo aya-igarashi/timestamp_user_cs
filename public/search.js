@@ -17,17 +17,17 @@ document.getElementById("tosearch").onclick = function(){
   while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
 
   
-  // XMLHttpRequestの使い方が間違っています。
+  // XMLHttpRequestの使い方が間違っていました。
   // このコードでは少し分かりやすいように講義で言ってたものから処理の順番を入れ替えていますが、
   // ↓でサーバ側へリクエストを送っていて、
   // req.open('POST', url, true);
   // req.setRequestHeader('Content-Type', 'application/json');
   // req.send(JSON.stringify({search_junle: search_junle}));
   
+  // ↓でサーバからのレスポンスを待ち構えている感じです。
   // req.onreadystatechange = function(){
   //   if(req.readyState == 4 && req.status == 200) {
   //   ...
-  // 
   const url = '/find'; // 通信先
   const req = new XMLHttpRequest(); // 通信用オブジェクト
   req.open('POST', url, true);
