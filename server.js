@@ -14,16 +14,6 @@ app.use(cookieParser());
 const MongoClient = require('mongodb').MongoClient;
 const mongouri = 'mongodb+srv://'+process.env.USER+':'+process.env.PASS+'@'+process.env.MONGOHOST;
 
-
-
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
@@ -47,12 +37,6 @@ app.get("/", (request, response) => {
   }
 });
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
-});
-
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
@@ -67,17 +51,25 @@ app.post('/post1', function(request, response) {
   response.send('受け取った値は：' + request.body.param1);
 });
 
+// GET でもできますが、インターンの講義で教えたやり方でやるなら、POST の方が楽。
+// GET: 取得、POST: 送信、なので、検索機能の場合は本当は GET の方が良いです。
 app.post('/find', function(req, res){
   let received = '';
   req.setEncoding('utf8');
   req.on('data', function(chunk) {
     received += chunk;
   });
+  // req.on('end', function(){ ... }) というのが必要で、
+  // received にデータが入った後の処理はこの中に書く必要があります。
   req.on('end', function() {
     const search_junle = JSON.parse(received).search_junle;
     MongoClient.connect(mongouri, function(error, client) {
       const db = client.db(process.env.DB); // 対象 DB
       const colDishes = db.collection('dishes'); // 対象コレクション
+      
+      // Iさん (個人名は隠しておきます) のコードでは search_junle が主食であれば、condition に"主食"を入れる、
+      // というような記述がありましたが、セレクトボックスの値をうまくとれていれば、
+      // それをそのまま condition にセットするだけで上手く検索できます。
       const condition = {junle: search_junle}; // 検索条件
       
       colDishes.find(condition).toArray(function(err, dishes) {

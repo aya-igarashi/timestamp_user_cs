@@ -6,9 +6,14 @@ document.getElementById("toform").onclick = function(){
 };
 
 document.getElementById("tosearch").onclick = function(){
-  while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
+  // SELECT を document.getElementById したとき、value には「その時選択された要素」が入っているので、
+  // こんな感じで書くと、「現在選択されたジャンル」を search_junle 変数に入れることが出来ます。
   const search_junle = document.getElementById("exampleFormControlSelect1").value;
   const tbody = document.getElementById('tbody'); 
+  
+  // Iさんのコードだとテーブル要素を作った後にこの処理を書いていましたが、
+  // これはテーブルの要素を全て削除 (いわゆる初期化)
+  while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
 
   const url = '/find'; // 通信先
   const req = new XMLHttpRequest(); // 通信用オブジェクト
