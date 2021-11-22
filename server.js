@@ -117,7 +117,7 @@ app.post('/login', function(req, res) {
         res.redirect('/'); // リダイレクト
       }else{
         console.log('NG');
-        res.sendFile(__dirname + "/views/log-in.html");
+        res.sendFile(__dirname + "/views/index.html");
       }
     });
   });
