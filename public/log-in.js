@@ -21,13 +21,13 @@
           console.log(req.response);
           const result = JSON.parse(req.response);
           
-          if([result.name, result.password]==user_np){
-            console.log(user_pass);
-              window.location.href = '/in';
+          
+          if(result.length === 0){
+            alert("認証できませんでした");
           }
           else{
-            alert("認証できませんでした");
-          }          
+            window.location.href = '/in';
+          }       
         }
       };
     };
