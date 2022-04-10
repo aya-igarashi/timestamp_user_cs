@@ -1,32 +1,35 @@
-# hello-express
+打刻アプリ/ユーザー側
+<br>月の残業時間を意識しながら働くことをテーマにしたアプリケーションです。
+<br>ユーザー側の画面と管理者側の画面に分かれています。こちらは管理者側のアプリケーションです。
+<br>java script, node.js, expressを用いて制作しています。
+<br>仕様は以下の通りになっています。
 
-A server that serves a webpage, its resources, and some data
+ユーザー側の仕様
 
+<br>・ユーザーログイン（作成中）
+<br>・日時と時刻のリアルタイム表示（作成済み） 
+<br>・出勤、退勤、休憩、戻りの打刻 （作成中：ユーザーidと紐付けるカラムを追加する）
+<br>・月の残業時間の表示（未実装）
+<br>（・ログアウト）（未実装）
 
-## Your Project
+管理者側の仕様
 
-On the front-end,
+<br>・ユーザー情報編集（作成中：検索、削除機能を追加する）
+<br>・従業員の名前から打刻時間の確認と編集（作成中）
+<br>・従業員ごとの就業時間、残業時間の確認確認（未実装）
+<br>・残業アラート（一定の残業時間を超えた社員をアラートでお知らせ）（未実装）
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+データベースの仕様
 
-On the back-end,
+<br>勤怠テーブル
+<br>LユーザーID(ユーザー１のキーと紐づいているレコード)
+<br>L日付
+<br>L出勤時間
+<br>L休憩時間
+<br>L休憩戻り
+<br>L退勤時間
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
-
-
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )# timestamp_user_cs
-# timestamp_user_cs
-# timestamping_manage_sc
+<br>ユーザーテーブル
+<br>LユーザID  
+<br>Lユーザ名 
+<br>Lパスワード 
