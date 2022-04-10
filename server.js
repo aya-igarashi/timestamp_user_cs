@@ -41,6 +41,10 @@ app.post('/admin', function(req, res){
       console.log(result);
       res.json(result);
       
+      if(result){
+        //index.htmlページへ遷移
+      }
+      
       client.close(); // DB を閉じる
      });
    });
