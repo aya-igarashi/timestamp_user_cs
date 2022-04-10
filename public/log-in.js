@@ -22,7 +22,7 @@
           const result = JSON.parse(req.response);
           
           if(result){
-            window.location.href = './index.html';
+            window.location.href = '/in';
           }
           else{
             document.getElementById("nulltext").value= "認証できませんでした";

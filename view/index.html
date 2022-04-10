@@ -55,14 +55,14 @@
     var day = now.getDate();
     document.getElementById("day").innerHTML = day;
  
-    var weeks = [ "日", "月", "火", "水曜日", "木曜日", "金曜日", "土曜日" ];
+    var weeks = [ "日", "月", "火", "水", "木", "金", "土曜日" ];
     var weekdays = now.getDay();
     document.getElementById("week").innerHTML = weeks[weekdays];
     
     var nowhour = now.getHours();
     var nowminutes = now.getMinutes();
     var nowseconds = now.getSeconds();
-    var time = nowhour + ":" + nowminutes + "：" + nowseconds; 
+    var time = nowhour + "時" + nowminutes + "分" + nowseconds + "秒"; 
     document.getElementById("time").innerHTML = time;
   }
   setInterval('showTime()' ,1000); 

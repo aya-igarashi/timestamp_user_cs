@@ -21,6 +21,10 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/view/log-in.html");
 });
 
+app.get("/in", (request, response) => {
+  response.sendFile(__dirname + "/view/index.html");
+});
+
 //ログイン認証
 app.post('/admin', function(req, res){
   let received = '';
