@@ -39,7 +39,7 @@ app.post('/admin', function(req, res){
     const condition = {$and:[{name:name},{password:password}]};
     colUsers.find(condition).toArray(function(err, result) {
       console.log(result);
-      
+      res.json(result);
       //if(result){
         //index.htmlページへ遷移
       //}

@@ -14,9 +14,7 @@
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
       req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
-      if(req.readyState == 4 && req.status == 200) {
-        alert('成功'); // 成功したらアラート表示
-      }
+      
       console.log(req.status);
       req.onreadystatechange = function(){
         console.log("a");
@@ -24,9 +22,9 @@
           console.log(req.response);
           const result = JSON.parse(req.response);
         
-          if(!result){
-            document.getElementById("nulltext").value= "認証できませんでした";
-          }          
+          //if(!result){
+          //  document.getElementById("nulltext").value= "認証できませんでした";
+          //}          
         }
       };
       console.log(req.status);
