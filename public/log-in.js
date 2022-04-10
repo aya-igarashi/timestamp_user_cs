@@ -21,8 +21,11 @@
           console.log(req.response);
           const result = JSON.parse(req.response);
           
-          if(result){
-            window.location.href = '/in';
+          if(result.name=user_name){
+            console.log(user_pass);
+             if(result.password=user_pass){
+               window.location.href = '/in';
+             }
           }
           else{
             document.getElementById("nulltext").value= "認証できませんでした";
