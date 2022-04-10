@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>打刻アプリ</title>
+
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/style.css" />
+
+  
+  </head>
+  <body>
+    <h1 class = "title">勤務管理</h1>
+    
+    <div class ="day">
+      <p>今日は<span id="year"></span>年<span id="month"></span>月<span id="day"></span>日、<span id="week"></span>です</p>
+    </div>
+    <div class = "time">
+      <span id="time"></span>
+    </div> 
+    
+    
+    <div class="bt">
+      <button id="toattend" type="submit">出勤</button>
+      <button id="toleave" type="submit">退勤</button>
+    </div>
+    
+    <div class="bt2">
+      <button id="tobreak" type="submit">休憩</button>
+      <button id="endbreak" type="submit">戻り</button>
+    </div>
+    
+    <div>
+      <p>今月の残業時間はx<span id ="overtime"></span>時間です。</p>
+    </div>
+     
+
+  <script>
+   
+  function showTime() {
+    var now = new Date();
+    var year =  now.getFullYear();
+    document.getElementById("year").innerHTML = year ;
+    
+    var month = now.getMonth();
+    document.getElementById("month").innerHTML = month + 1 ;
+    
+    var day = now.getDate();
+    document.getElementById("day").innerHTML = day;
+ 
+    var weeks = [ "日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日" ];
+    var weekdays = now.getDay();
+    document.getElementById("week").innerHTML = weeks[weekdays];
+    
+    var nowhour = now.getHours();
+    var nowminutes = now.getMinutes();
+    var nowseconds = now.getSeconds();
+    var time = nowhour + ":" + nowminutes + "：" + nowseconds; 
+    document.getElementById("time").innerHTML = time;
+  }
+  setInterval('showTime()' ,1000); 
+
+    //時刻の送信
+ 
+  function timeStamp(button_type){ 
+    var now = new Date();
+    const month = now.getMonth() + 1;
+    const month_pd = (('0' + month).slice(-2));//０パディング
+    const day = now.getDate();
+    const day_pd = (('0' + day).slice(-2));
+    const ymd = now.getFullYear() + "-" + month_pd + "-" + day_pd;
+    const time = now.getHours() + "：" + now.getMinutes();
+    const timestamp = {type:button_type,　ymd:ymd, time:time};
+    console.log(timestamp);
+    
+    const url = '/stamp'; // 通信先
+       const req = new XMLHttpRequest(); // 通信用オブジェクト
+       req.onreadystatechange = function(){
+       if(req.readyState == 4 && req.status == 200) {
+        alert('成功'); // 成功したらアラート表示
+       }
+      };
+      req.open('POST', url, true);
+      req.setRequestHeader('Content-Type', 'application/json');
+      req.send(JSON.stringify(timestamp)); // オブジェクトを文字列化して送信
+     };
+    
+          document.getElementById("toattend").onclick = function(){
+      timeStamp("出勤");   
+  }
+
+    document.getElementById("toleave").onclick = function(){
+      timeStamp("退勤");   
+  }
+
+    document.getElementById("tobreak").onclick = function(){
+      timeStamp("休憩");   
+  }
+
+    document.getElementById("endbreak").onclick = function(){
+      timeStamp("戻り");   
+  }
+    
+   
+    
+  //残業時間の計算
+  
+    
+  </script> 
+    
+  </body>
+</html>
