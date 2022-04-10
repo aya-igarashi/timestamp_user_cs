@@ -17,7 +17,7 @@
       if(req.readyState == 4 && req.status == 200) {
         alert('成功'); // 成功したらアラート表示
       }
-      
+      console.log(req.status);
       req.onreadystatechange = function(){
         console.log("a");
         if(req.readyState == 4 && req.status == 200) {
@@ -29,6 +29,6 @@
           }          
         }
       };
-      console.log(req.readyState);
+      console.log(req.status);
     };
     
