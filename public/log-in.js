@@ -21,9 +21,9 @@
           console.log(req.response);
           const result = JSON.parse(req.response);
           
-          if([result.name, result.password]=user_np){
-            console.log([result.name, result.password]);
-            window.location.href = '/in';
+          if([result.name, result.password]==user_np){
+            console.log(user_pass);
+              window.location.href = '/in';
           }
           else{
             alert("認証できませんでした");

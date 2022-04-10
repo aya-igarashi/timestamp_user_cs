@@ -44,9 +44,7 @@ app.post('/admin', function(req, res){
     colUsers.find(condition).toArray(function(err, result) {
       console.log(result);
       res.json(result);
-      //if(result){
-        //index.htmlページへ遷移
-      //}
+
       
       client.close(); // DB を閉じる
      });
