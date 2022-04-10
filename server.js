@@ -39,8 +39,14 @@ app.post('/admin', function(req, res){
     const condition = {$and:[{name:name},{password:password}]};
     colUsers.find(condition).toArray(function(err, result) {
       console.log(result);
-      result._id
-      res.json(result);
+      if(result){
+        (request, response) => {
+          response.sendFile(__dirname + "/view/log-in.html");
+        }
+                
+        
+      }
+      res.json(result._id);
       client.close(); // DB を閉じる
      });
    });
