@@ -15,18 +15,19 @@
       req.setRequestHeader('Content-Type', 'application/json');
       req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
       
-      console.log(req.status);
+      
       req.onreadystatechange = function(){
-        console.log("a");
         if(req.readyState == 4 && req.status == 200) {
           console.log(req.response);
           const result = JSON.parse(req.response);
-        
-          //if(!result){
-          //  document.getElementById("nulltext").value= "認証できませんでした";
-          //}          
+          
+          if(result){
+            window.location.href = '../index.html';
+          }
+          else{
+            document.getElementById("nulltext").value= "認証できませんでした";
+          }          
         }
       };
-      console.log(req.status);
     };
     
