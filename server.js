@@ -39,10 +39,8 @@ app.post('/admin', function(req, res){
     const condition = {$and:[{name:name},{password:password}]};
     colUsers.find(condition).toArray(function(err, result) {
       console.log(result);
-      if(result){
-        //ページ移動する処理
-      }
       res.json(result);
+      
       client.close(); // DB を閉じる
      });
    });
