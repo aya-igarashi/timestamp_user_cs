@@ -10,32 +10,35 @@
 
     <script src="/script.js" defer></script>
     <link rel="stylesheet" href="/style.css" />
-
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
+      rel="stylesheet"
+    />
   
   </head>
   <body>
     <h1 class = "title">勤務管理</h1>
     
-    <div class ="day">
-      <p>今日は<span id="year"></span>年<span id="month"></span>月<span id="day"></span>日、<span id="week"></span>です</p>
-    </div>
-    <div class = "time">
-      <span id="time"></span>
-    </div> 
-    
-    
-    <div class="bt">
-      <button id="toattend" type="submit">出勤</button>
-      <button id="toleave" type="submit">退勤</button>
-    </div>
-    
-    <div class="bt2">
-      <button id="tobreak" type="submit">休憩</button>
-      <button id="endbreak" type="submit">戻り</button>
+    <div class="box">
+      <div class ="day">
+        <p><span id="year"></span>年<span id="month"></span>月<span id="day"></span>日(<span id="week"></span>)</p>
+      </div>
+      <div class = "time">
+        <span id="time"></span>
+      </div> 
     </div>
     
     <div>
-      <p>今月の残業時間はx<span id ="overtime"></span>時間です。</p>
+      <button id="toattend" type="submit" class="bt">出勤</button>
+      <button id="toleave" type="submit" class="bt1">退勤</button>
+    </div>
+    <div>
+      <button id="tobreak" type="submit" class="bt2">休憩</button>
+      <button id="endbreak" type="submit" class="bt2">戻り</button>
+    </div>
+    
+    <div>
+      <p class="overtime">今月の残業時間はx<span id ="overtime"></span>時間です。</p>
     </div>
      
 
@@ -52,7 +55,7 @@
     var day = now.getDate();
     document.getElementById("day").innerHTML = day;
  
-    var weeks = [ "日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日" ];
+    var weeks = [ "日", "月", "火", "水曜日", "木曜日", "金曜日", "土曜日" ];
     var weekdays = now.getDay();
     document.getElementById("week").innerHTML = weeks[weekdays];
     

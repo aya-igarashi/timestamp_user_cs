@@ -1,22 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>ログイン前</title>
-  <script src="/log-in.js" defer></script>
-</head>
-<body>
-  <h2>ログイン</h2>
-  <form >
-    <input type="text" name="username" id="username" placeholder="user name"/>
-    <input type="password" name="password" id="password" placeholder="password"/>
-    <button type="submit" id="login"　>ログイン</button>
-  </form>
-  
-  <div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ログイン前</title>
+    <script src="/log-in.js" defer></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div>
+      <h1 class="title">勤務管理</h1>
+    </div>
+
+    <div class="box2">
+      <form>
+        <p class="label">username</p>
+        <div>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="user name"
+          />
+        </div>
+        
+        <p class="label">password</p>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+        </div>
+      </form>
+
+      <div>
+        <button type="submit" id="login" 　>ログイン</button>
+      </div>
+    </div>
+    
+    <div>
       <output id="nulltext"></output>
-  </div>
-  
-  
+    </div>
   </body>
 </html>
