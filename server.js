@@ -40,13 +40,9 @@ app.post('/admin', function(req, res){
     colUsers.find(condition).toArray(function(err, result) {
       console.log(result);
       if(result){
-        (request, response) => {
-          response.sendFile(__dirname + "/view/log-in.html");
-        }
-                
-        
+        //ページ移動する処理
       }
-      res.json(result._id);
+      res.json(result);
       client.close(); // DB を閉じる
      });
    });

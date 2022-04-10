@@ -16,10 +16,13 @@
       req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
       req.onreadystatechange = function(){
         if(req.readyState == 4 && req.status == 200) {
-          alert('成功'); // 成功したらアラート表示
+          
           const result = JSON.parse(req.response);
           console.log(result)
-          document.getElementById("nulltext").value= result
+          if(!result){
+            document.getElementById("nulltext").value= "認証できませんでした";
+          }
+          
         }
       };      
     };
