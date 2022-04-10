@@ -11,24 +11,20 @@
    
       const url = '/admin'; // 通信先
       const req = new XMLHttpRequest(); // 通信用オブジェクト
+       req.onreadystatechange = function(){
+       if(req.readyState == 4 && req.status == 200) {
+        alert('成功'); // 成功したらアラート表示
+       }
+      };
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
       req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
-      if(req.readyState == 4 && req.status == 200) {
-        alert('成功'); // 成功したらアラート表示
-      }
-      
       req.onreadystatechange = function(){
-        console.log("a");
         if(req.readyState == 4 && req.status == 200) {
-          console.log(req.response);
-          const result = JSON.parse(req.response);
-        
-          if(!result){
-            document.getElementById("nulltext").value= "認証できませんでした";
-          }          
-        }
-      };
-      console.log(req.readyState);
+          
+      const results = JSON.parse(req.response);
+      console.log(results);
+      
+      };  
     };
-    
+  };
