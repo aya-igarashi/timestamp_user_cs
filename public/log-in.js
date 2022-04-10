@@ -14,9 +14,10 @@
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
       req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
-      
-      
+      const s="ffff"
+      console.log(s);
       req.onreadystatechange = function(){
+        console.log("a");
         if(req.readyState == 4 && req.status == 200) {
           console.log(req.response);
           const result = JSON.parse(req.response);
