@@ -1,15 +1,7 @@
-/******************************************************************************
-START Glitch hello-app default styles
 
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
-/* Our default values set as CSS variables */
 :root {
   --color-bg-all: #4abdac;
-  --color-bg: #dfdce3;
+  --color-bg: #ffffff;
   --color-text-main: #4abdac;
   --color-primary: #afece0;
   --wrapper-height: 87vh;
@@ -25,56 +17,12 @@ to this section's matching END comment to see page-specific styles.
   display: none !important;
 }
 
-/* Navigation grid */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem auto 0;
-  padding: 1rem 0 0.75rem 0;
-  width: 100%;
-  flex-wrap: wrap;
-  border-top: 4px solid #fff;
-}
 
-.footer a:not(.btn--remix):link,
-a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000;
-  text-decoration: none;
-  border-style: none;
-}
-.footer a:hover {
-  background: var(--color-primary);
-}
-
-.footer .links {
-  padding: 0.5rem 1rem 1.5rem;
-  white-space: nowrap;
-}
-
-.divider {
-  padding: 0 1rem;
-}
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
 
 html {
   min-height: 100%; /* 「div.background」に対してはmin-heightに対応していないブラウザ用 */
   min-width: 100%;
   background: var(--color-bg-all)
-  /*
-  background: linear-gradient(
-    to bottom,
-    var(--color-bg) 0%,
-    var(--color-bg) 50%,
-    var(--color-text-main) 50%,
-    var(--color-text-main)
-  );
-  */
 }
 
 p {
@@ -191,7 +139,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: #fc4a1a;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
@@ -201,7 +149,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: #fc4a1a;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   border: 2px solid #fc4a1a;
   box-sizing: border-box;
   border-radius: 8px;
@@ -213,7 +161,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: dodgerblue;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
@@ -223,7 +171,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: dodgerblue;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   border: 2px solid dodgerblue;
   box-sizing: border-box;
   border-radius: 8px;
@@ -235,7 +183,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
@@ -245,7 +193,7 @@ div {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 200%;
-  background: #dfdce3;
+  background: #ffffff;
   border: 2px solid #f78733;
   box-sizing: border-box;
   border-radius: 8px;
@@ -312,7 +260,7 @@ form {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 180%;
-  background: #dfdce3;
+  background: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 0.8rem 2rem;
@@ -322,7 +270,7 @@ form {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 180%;
-  background: #dfdce3;
+  background: #ffffff;
   border: 2px solid #f78733;
   box-sizing: border-box;
   border-radius: 8px;
