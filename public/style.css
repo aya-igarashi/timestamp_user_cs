@@ -1,45 +1,17 @@
-
 :root {
   --color-bg-all: #4abdac;
   --color-bg: #ffffff;
   --color-text-main: #4abdac;
-  --color-primary: #afece0;
-  --wrapper-height: 87vh;
-  --image-max-width: 300px;
-  --image-margin: 3rem;
 }
-
-/* Basic page style resets */
-* {
-  box-sizing: border-box;
-}
-[hidden] {
-  display: none !important;
-}
-
 
 
 html {
-  min-height: 100%; /* 「div.background」に対してはmin-heightに対応していないブラウザ用 */
-  min-width: 100%;
+  min-height: 100%; 
   background: var(--color-bg-all)
 }
 
 p {
   text-align: center;
-}
-
-/* Page structure */
-.wrapper {
-  min-height: var(--wrapper-height);
-  display: grid;
-  place-items: center;
-  margin: 0 1rem;
-}
-
-.content {
-  align-items: left;
-  justify-content: left;
 }
 
 div {
@@ -59,9 +31,7 @@ div {
 }
 
 .box{
-  display: flex;
   flex-direction: column;
-  margin: 0 auto;
   padding: 1.5em 0.5em;
   border: 4px solid #f6bfbc;
   border-radius: 8px;
@@ -99,128 +69,46 @@ div {
   margin: 1rem 0 0 0;
 }
 
-/* Very light scaling for our illustration */
-.illo-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.illustration {
-  max-width: 100%;
-  max-height: 150px;
-  margin-top: 1rem;
-}
-
-/* Styles for our custom color form and its results */
-.color-info {
-  margin-left: 5px;
-}
-.color-search {
-  margin-top: 3rem;
-}
-.color-form {
-  width: 90%;
-  max-width: 500px;
-  margin-left: 5px;
-}
-
-.color-form button {
-  margin-top: 8px;
-}
-.color-form button:hover {
-  cursor: pointer;
-  box-shadow: -8px 4px 20px #9be7d8;
-}
-
-.inline-block{
-  display:inline-block;
-}
-
 .bt {
   font-family: "M PLUS 1p", sans-serif;
   color: #fc4a1a;
   font-size: 200%;
-  background: #ffffff;
+  background: var(--color-bg);
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
-  margin: 4rem 2rem 2rem 2rem;
+  margin: 4rem 2rem 2rem 2rem;/*上右下左*/
 }
 .bt:hover {
-  font-family: "M PLUS 1p", sans-serif;
-  color: #fc4a1a;
-  font-size: 200%;
-  background: #ffffff;
   border: 2px solid #fc4a1a;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  margin: 4rem 2rem 2rem 2rem;
 }
 
 .bt1 {
   font-family: "M PLUS 1p", sans-serif;
   color: dodgerblue;
   font-size: 200%;
-  background: #ffffff;
+  background: var(--color-bg);
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
   margin: 4rem 2rem 2rem 2rem;
 }
 .bt1:hover {
-  font-family: "M PLUS 1p", sans-serif;
-  color: dodgerblue;
-  font-size: 200%;
-  background: #ffffff;
   border: 2px solid dodgerblue;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  margin: 4rem 2rem 2rem 2rem;
 }
 
 .bt2 {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 200%;
-  background: #ffffff;
+  background: var(--color-bg);
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1rem 2rem;
   margin: 1rem 2rem 2rem 2rem;
 }
 .bt2:hover {
-  font-family: "M PLUS 1p", sans-serif;
-  color: #f78733;
-  font-size: 200%;
-  background: #ffffff;
   border: 2px solid #f78733;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 1rem 2rem;
-  margin: 1rem 2rem 2rem 2rem;
-}
-
-label {
-  color: #000000;
-  font-weight: bold;
-}
-
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
-}
-.instructions p {
-  font-size: 1rem;
-}
-h2 {
-  color: #2800ff;
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .label{
@@ -230,19 +118,6 @@ form {
   font-weight: bold;
   font-size: 18px;
   color: var(--color-bg-all);
-}
-
-.textbox{
-  font-family: "M PLUS 1p", sans-serif;
-  width: 200px;
-  padding: 10px;
-  border: 2px solid #f6bfbc;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #000000;
-  outline: none;
-  margin-top: -15px;
-  margin-bottom: 10px;
 }
 
 .box2{
@@ -260,22 +135,14 @@ form {
   font-family: "M PLUS 1p", sans-serif;
   color: #f78733;
   font-size: 180%;
-  background: #ffffff;
+  background: #dfdce3;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 0.8rem 2rem;
   margin: 3rem 0.5rem 1rem 1rem;
 }
 .bt3:hover {
-  font-family: "M PLUS 1p", sans-serif;
-  color: #f78733;
-  font-size: 180%;
-  background: #ffffff;
   border: 2px solid #f78733;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 0.8rem 2rem;
-  margin: 3rem 0.5rem 1rem 1rem;
 }
 
 @media screen and (max-width:480px) {
@@ -333,21 +200,13 @@ form {
   } 
   
   .label{
-    font-family: "M PLUS 1p", sans-serif;
-    text-align: center;
-    font-style: normal;
-    font-weight: bold;
     font-size: 18px;
-    color: var(--color-bg-all);
   }
 
   .textbox{
     width: 200px;
     padding: 10px;
-    border: 2px solid #f6bfbc;
-    border-radius: 8px;
     font-size: 16px;
-    color: #000000;
     outline: none;
     margin-top: -15px;
     margin-bottom: 10px;
